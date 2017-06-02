@@ -2,6 +2,13 @@
     "name": "justinkprince/june-bash-api",
     "description": "Symfony PHP API for June birthday bash PWA.",
     "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Justin Prince",
+            "email": "justinkprince@gmail.com"
+        }
+    ],
     "require": {
         "friendsofsymfony/rest-bundle": "^2.2",
         "jms/serializer-bundle": "^2.0",
@@ -9,11 +16,52 @@
         "friendsofsymfony/user-bundle": "^2.0",
         "friendsofsymfony/oauth-server-bundle": "^1.5"
     },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Justin Prince",
-            "email": "justinkprince@gmail.com"
-        }
-    ]
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
+        "classmap": [
+            "app/AppKernel.php",
+            "app/AppCache.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        },
+        "files": [
+            "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
+        ]
+    },
+    "scripts": {
+        "symfony-scripts": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-install-cmd": [
+            "@symfony-scripts"
+        ],
+        "post-update-cmd": [
+            "@symfony-scripts"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
+        "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
+        "symfony-assets-install": "relative",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        },
+        "branch-alias": null
+    }
 }
