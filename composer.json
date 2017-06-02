@@ -1,0 +1,19 @@
+{
+    "name": "justinkprince/june-bash-api",
+    "description": "Symfony PHP API for June birthday bash PWA.",
+    "type": "project",
+    "require": {
+        "friendsofsymfony/rest-bundle": "^2.2",
+        "jms/serializer-bundle": "^2.0",
+        "nelmio/api-doc-bundle": "^2.13",
+        "friendsofsymfony/user-bundle": "^2.0",
+        "friendsofsymfony/oauth-server-bundle": "^1.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Justin Prince",
+            "email": "justinkprince@gmail.com"
+        }
+    ]
+}
