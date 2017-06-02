@@ -1,9 +1,10 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+api:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix: /api
 
 api_doc:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    #resource: "@NelmioApiDocBundle/Resources/config/swagger_routing.yml"
     prefix:   /api/doc
 
 oauth_server_token:

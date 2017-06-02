@@ -1,0 +1,3 @@
+posts:
+    resource: AppBundle\Controller\PostController
+    type: rest

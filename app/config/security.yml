@@ -22,8 +22,12 @@ security:
             pattern: ^/oauth/v2/token
             security: false
 
-        main:
-            pattern: ^/                                # All URLs are protected
+        api:
+            pattern: ^/api                                # All URLs are protected
             fos_oauth: true                            # OAuth2 protected resource
             stateless: true                            # Do no set session cookies
-            anonymous: false                           # Anonymous access is not allowed
+            anonymous: true                           # Anonymous access is not allowed
+
+    #access_control:
+        #- { path: ^/, roles: [ IS_AUTHENTICATED_FULLY ] }
+        #- { path: ^/, roles: [ IS_AUTHENTICATED_ANONYMOUSLY ] }
